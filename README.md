@@ -4,7 +4,7 @@ Busca información en Google automáticamente. Solo introduce el tema a buscar, 
 ## Requisitos
 
 Google Chrome Versión 98
-.Net Framework v4.7.2<ñ
+.Net Framework v4.7.2
 
 ## Filtros
 | Código a usar | Elementos que afecta |
