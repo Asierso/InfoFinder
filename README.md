@@ -9,8 +9,8 @@ Google Chrome Versión 98
 ## Filtros
 | Código a usar | Elementos que afecta |
 | ------------- | ------------- |
-| p  | Todo el texto contenido en párrafos  |
-| h1 - h6  | Todo el texto contenido en títulos del nivel indicado |
-| img | Cualquier recurso de imágen encontrado |
+| `p`  | Todo el texto contenido en párrafos  |
+| `h1 - h6`  | Todo el texto contenido en títulos del nivel indicado |
+| `img` | Cualquier recurso de imágen encontrado |
 | otros "HTML" | Todo el contenido de dentro del tipo indicado |
-| * | Guarda todos los párrafos, títulos de primer a cuarto nivel e imágenes |
+| `*` | Guarda todos los párrafos, títulos de primer a cuarto nivel e imágenes |
