@@ -5,5 +5,11 @@ Busca información en Google automáticamente. Solo introduce el tema a buscar, 
 Google Chrome Versión 98
 .Net Framework v4.7.2
 
-# Filtros
-
+## Filtros
+| Letra a usar | Elementos que afecta |
+| ------------- | ------------- |
+| p  | Todo el texto contenido en párrafos  |
+| h1 - h6  | Todo el texto contenido en títulos del nivel indicado |
+| img | Cualquier recurso de imágen encontrado |
+| otros <html> | Todo el contenido de la etiqueta |
+| * | Guarda todos los párrafos, títulos de primer a cuarto nivel e imágenes |
