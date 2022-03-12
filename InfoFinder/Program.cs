@@ -270,7 +270,7 @@ namespace InfoFinder
             Console.WriteLine("    ##     ##  ##    ##      ##  ##    ##        ##     ##  ##   ##  ##   ##        ## ");
             Console.WriteLine("   ####    ##  ##   ####      ####    ####      ####    ##  ##    ######   #####   #### ");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\nProgram created by Asierso\nInfoFinder Ver 1.3.2\nPress Ctrl + C to exit\n-------------------");
+            Console.WriteLine("\nProgram created by Asierso\nInfoFinder Ver 1.3.3\nPress Ctrl + C to exit\n-------------------");
             Console.ResetColor();
         }
 
