@@ -9,6 +9,7 @@ namespace InfoFinder
     internal class DriverOrganize
     {
         private Queue<Query> Organizations = new Queue<Query>();
+        public List<Query> Processing = new List<Query>();
         public void Start()
         {
             for(int i = Organizations.Count - 1; i >= 0; i--)
@@ -23,8 +24,10 @@ namespace InfoFinder
         {
             await Task.Run(() =>
             {
+                Processing.Add(query);
                 var sdriver = new SearchDriver();
                 sdriver.StartSearch(query.Data, query.Pages, query.Filter);
+                Processing.Remove(query);
             });
         }
     }
