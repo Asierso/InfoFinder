@@ -3,7 +3,7 @@ Busca información en Google automáticamente. Solo introduce el tema a buscar, 
 
 ## Requisitos
 
-* Google Chrome Versión 98
+* Google Chrome (preferiblemente 114 en adelante)
 * .Net Framework v4.7.2
 
 ## Filtros
@@ -20,7 +20,12 @@ Busca información en Google automáticamente. Solo introduce el tema a buscar, 
 
 InfoFinder almacena todas las páginas de las cuales se han buscado/revisado información en un archivo, donde referencia la URL de la web buscada con la carpeta con el contenido extraído de esta.
 
-## Búsqueda masiva
+## Búsqueda masiva (versión 1.4 en adelante)
+
+InfoFinder puede buscar contenidos ordenados delimitados por `;` dentro de el campo de búsqueda de contenidos. Podrá visualizar los contenidos buscandose en el contenedor derecho de la interfaz
+
+
+## Búsqueda masiva (versiones antiguas)
 
 InfoFinder puede buscar contenidos ordenados dentro de un archivo .csv delimitado por `;`. La estructura de etos archivos debe de ser la siguiente
 

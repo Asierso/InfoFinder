@@ -36,18 +36,19 @@ namespace InfoFinder
         {
             if (searchVersion.DriverVersion != searchVersion.BrowserVersion && System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable()) //Check network and outdated version
             {
+                var zipName = "chromedriver.zip";
                 try
                 {
                     //Prepare to download file
                     var wclient = new WebClient();
-                    var zipName = "chromedriver.zip";
                     var chromeVersionArray = searchVersion.BrowserVersion.Split('.');
                     //Get complete chromedriver version name at cdn
                     string seleniumVersion = wclient.DownloadString(String.Format("https://chromedriver.storage.googleapis.com/LATEST_RELEASE_{0}.{1}.{2}", chromeVersionArray[0], chromeVersionArray[1], chromeVersionArray[2]));
                     //Delete old version
-                    File.Delete("chromedriver.exe");
+                    if(File.Exists("chromedriver.exe"))
+                        File.Delete("chromedriver.exe");
                     //Download chromedriver from cdn
-                    wclient.DownloadFile(String.Format("https://chromedriver.storage.googleapis.com/{0}/chromedriver_win32.zip", seleniumVersion), zipName);
+                    wclient.DownloadFile($"https://chromedriver.storage.googleapis.com/{seleniumVersion}/chromedriver_win32.zip", zipName);
                     //Install chromedriver (uncompress and update version in file)
                     File.SetAttributes(zipName, FileAttributes.Hidden);
                     ZipFile.ExtractToDirectory(zipName, ".");
@@ -56,7 +57,15 @@ namespace InfoFinder
                 }
                 catch (Exception ex)
                 {
-                    //Conection error
+                    Console.WriteLine(ex.ToString());
+                    if (File.Exists("chromedriver.exe"))
+                    {
+                        Message.ShowError("Error de instalación", "Error al instalar chromedriver. Borre el archivo 'chromedriver.exe' y reinicie el programa");
+                        if (File.Exists(zipName))
+                            File.Delete(zipName);
+                        File.WriteAllText(VersionInfoFile, searchVersion.BrowserVersion);
+                        Environment.Exit(0);
+                    }
                 }
             }
             else if (!System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())

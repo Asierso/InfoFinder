@@ -37,8 +37,10 @@ namespace InfoFinder
                     query.Filter = filtersTxt.Text;
                     query.Data = subject;
                     query.Pages = pagesUdc.Text;
+                    var render = SearchList.Render(new Point(0, SearchList.PositionSpacer), activeSearch, query);
+                    query.Render = render;
                     driverOrganize.AddQuerry(query);
-                    activeSearch.Controls.Add(SearchList.Render(new Point(0, SearchList.PositionSpacer), activeSearch,query));
+                    activeSearch.Controls.Add(render);
                     SearchList.PositionSpacer += 35;
                 }
             }
@@ -49,7 +51,10 @@ namespace InfoFinder
                 query.Data = subjectTxt.Text;
                 query.Pages = pagesUdc.Text;
                 driverOrganize.AddQuerry(query);
-                activeSearch.Controls.Add(SearchList.Render(new Point(0, SearchList.PositionSpacer), activeSearch,query));
+                var render = SearchList.Render(new Point(0, SearchList.PositionSpacer), activeSearch, query);
+                query.Render = render;
+                driverOrganize.AddQuerry(query);
+                activeSearch.Controls.Add(render);
                 SearchList.PositionSpacer += 35;
             }
 
@@ -59,6 +64,17 @@ namespace InfoFinder
         private void programURL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/Asierso/InfoFinder");
+        }
+
+        private void filtersTxt_TextChanged(object sender, EventArgs e) => validateData();
+
+        private void subjectTxt_TextChanged(object sender, EventArgs e) => validateData();
+        private void validateData()
+        {
+            if(filtersTxt.Text.Length > 0 && subjectTxt.Text.Length > 0) 
+                searchButton.Enabled = true;
+            else
+                searchButton.Enabled = false;
         }
     }
     

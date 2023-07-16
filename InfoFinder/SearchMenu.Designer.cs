@@ -47,6 +47,7 @@
             // 
             // searchButton
             // 
+            this.searchButton.Enabled = false;
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.searchButton.Location = new System.Drawing.Point(12, 217);
             this.searchButton.Name = "searchButton";
@@ -63,6 +64,7 @@
             this.subjectTxt.Name = "subjectTxt";
             this.subjectTxt.Size = new System.Drawing.Size(263, 99);
             this.subjectTxt.TabIndex = 1;
+            this.subjectTxt.TextChanged += new System.EventHandler(this.subjectTxt_TextChanged);
             // 
             // groupBox1
             // 
@@ -86,6 +88,7 @@
             this.filtersTxt.Name = "filtersTxt";
             this.filtersTxt.Size = new System.Drawing.Size(263, 26);
             this.filtersTxt.TabIndex = 6;
+            this.filtersTxt.TextChanged += new System.EventHandler(this.filtersTxt_TextChanged);
             // 
             // label3
             // 
@@ -138,7 +141,7 @@
             // programURL
             // 
             this.programURL.AutoSize = true;
-            this.programURL.Location = new System.Drawing.Point(680, 267);
+            this.programURL.Location = new System.Drawing.Point(728, 267);
             this.programURL.Name = "programURL";
             this.programURL.Size = new System.Drawing.Size(96, 20);
             this.programURL.TabIndex = 4;
@@ -151,7 +154,7 @@
             this.activeSearchGroup.Controls.Add(this.activeSearch);
             this.activeSearchGroup.Location = new System.Drawing.Point(454, 4);
             this.activeSearchGroup.Name = "activeSearchGroup";
-            this.activeSearchGroup.Size = new System.Drawing.Size(328, 260);
+            this.activeSearchGroup.Size = new System.Drawing.Size(376, 260);
             this.activeSearchGroup.TabIndex = 5;
             this.activeSearchGroup.TabStop = false;
             this.activeSearchGroup.Text = "Busquedas activas";
@@ -161,20 +164,21 @@
             this.activeSearch.AutoScroll = true;
             this.activeSearch.Location = new System.Drawing.Point(6, 25);
             this.activeSearch.Name = "activeSearch";
-            this.activeSearch.Size = new System.Drawing.Size(316, 229);
+            this.activeSearch.Size = new System.Drawing.Size(364, 229);
             this.activeSearch.TabIndex = 0;
             // 
             // SearchMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 291);
+            this.ClientSize = new System.Drawing.Size(835, 291);
             this.Controls.Add(this.activeSearchGroup);
             this.Controls.Add(this.programURL);
             this.Controls.Add(this.versionTxt);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.searchButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "SearchMenu";
             this.Text = "InfoFinder";
             this.Load += new System.EventHandler(this.SearchMenu_Load);

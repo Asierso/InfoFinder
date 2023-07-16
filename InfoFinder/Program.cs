@@ -22,8 +22,7 @@ namespace InfoFinder
         {
             ShowWindow(Process.GetCurrentProcess().MainWindowHandle, 0);
             var cdriverChecker = new ChromeDriverCheck();
-            cdriverChecker.Update(cdriverChecker.CheckVersion());
-
+            //cdriverChecker.Update(cdriverChecker.CheckVersion());
             var menu = new SearchMenu();
 
             Application.EnableVisualStyles();
